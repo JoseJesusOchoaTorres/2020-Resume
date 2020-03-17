@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    # HEADINGS 
+\*------------------------------------*/
+
+.#{$prefix}h1 {
+    font-size: $text-xl;
+}
+
+.#{$prefix}h2 {
+    font-size: $text-lg;
+}
+
+.#{$prefix}h3 {
+    font-size: $text-md;
+}
+
+.#{$prefix}h4 {
+    font-size: $text-sm;
+}
+
+
+    /*------------------------------------*\
+    ## SPECIAL CLASSES
+    \*------------------------------------*/
+
+    .#{$prefix}small {
+        font-size: $text-xs;
+    }
+
+    .#{$prefix}h1.#{$prefix}medium {
+        font-size: $text-xxl;
+    }
+
+    .#{$prefix}h1.#{$prefix}large {
+        font-size: $text-xxxl;
+    }

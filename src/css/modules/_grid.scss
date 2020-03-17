@@ -1,0 +1,91 @@
+/*------------------------------------*\
+  # GRID
+\*------------------------------------*/
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+
+    /*------------------------------------*\
+    ## CONTAINERS
+    \*------------------------------------*/
+
+    .#{$prefix}container,
+    .#{$prefix}container-fluid {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .#{$prefix}container {
+        max-width: $widthContainer;
+        flex-grow: 1;
+        width: auto;
+    }
+
+    .#{$prefix}container-fluid {
+        width: 100%;
+    }
+
+
+        /*------------------------------------*\
+        ### ROWS
+        \*------------------------------------*/
+
+        .#{$prefix}row, .#{$prefix}flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .#{$prefix}nowrap {
+            flex-wrap: nowrap;
+        }
+
+
+            /*------------------------------------*\
+            #### COLUMNS
+            \*------------------------------------*/
+
+            /**
+            * EXTRA SMALL (XS)
+            */
+
+            [class*="col-"] {
+                padding: .5rem;
+            }
+
+            .#{$prefix}col-xs {
+                flex-grow: 1;
+                flex-basis: 0;
+                max-width: 100%
+            }
+
+           @include gridGenerator($breakpoint: 'xs', $offset: true, $ordering: true, $hidding: true);
+
+
+            /**
+            * SMALL (SM), MEDIUM (MD), LARGE (LG)
+            */
+
+            @include sm {
+               @include gridGenerator($breakpoint: 'sm', $offset: true, $ordering: true, $hidding: true);
+            }
+            
+            @include md {
+               @include gridGenerator($breakpoint: 'md', $offset: true, $ordering: true, $hidding: true);
+            }
+           
+            @include lg {
+               @include gridGenerator($breakpoint: 'lg', $offset: true, $ordering: true, $hidding: true);
+            }
+
+        
+        /*------------------------------------*\
+        ### ROW REVERSING
+        \*------------------------------------*/
+
+        .#{$prefix}row.#{$prefix}row-reverse {
+            flex-direction: row-reverse;
+        }

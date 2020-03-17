@@ -1,0 +1,186 @@
+/**
+* GENERATE REPETITIVE CLASSES
+*
+* Description: This mixing is called to generate repetitive classes.
+*
+* @param {map} $map - Map variable where are hosted the keys and values to generate our classes.
+* @param {string} $attribute - This is a string parameter with our property name *('color', 'background-color', 'padding', etc)*.
+* @param {string} $separator ['base'] - This is a string parameter with our separator value.
+*
+* Map example:
+*
+* $colors: (
+*   gray-1: $color-gray-1,
+*   gray-2: $color-gray-2,
+*   ...
+* );
+*
+* Call example:
+*
+* .text-color {
+*   @include generator($colors, 'color', $separator: ':');
+* }
+*
+*
+* Output example:
+*
+* .text-color-gray-1 {
+*   color: #f9f9f9;
+* }
+*
+* ...
+*/
+
+@mixin generator($map, $property, $prefix: '-', $separator: '-', $suffix: '') {
+    @each $key, $value in $map {
+        &#{$prefix}#{$key} {
+            #{$property}:#{$value}#{$suffix};
+        }
+    }
+}
+
+
+
+
+/**
+* GENERATE COLUMN CLASSES
+*
+* Description: This mixing is called to generate all the column classes.
+*
+* @param {string} $breakpoint - This is a string parameter with our breakpoint value *('xm', 'sm', 'ms', 'lg')*.
+*/
+
+@mixin gridGenerator($breakpoint, $offset: false, $ordering: false, $hidding: false) {
+
+     /*------------------------------------*\
+    # COLUMNS
+    \*------------------------------------*/
+
+    @for $column from 1 to $gridColumns+1 {
+        .#{$prefix}col-#{$breakpoint}-#{$column} {
+            width: (100% * $column) / $gridColumns;
+        }
+    }
+
+
+    /*------------------------------------*\
+    # OFFSET COLUMNS
+    \*------------------------------------*/
+
+    @if $offset {
+        @for $column from 1 to $gridColumns+1 {
+             .#{$prefix}col-#{$breakpoint}-offset-#{$column} {
+                 margin-left: (100% * $column) / $gridColumns;
+             }
+        }
+    }
+    
+    
+    /*------------------------------------*\
+    # HIDDING ELEMENTS
+    \*------------------------------------*/
+
+    @if $ordering {
+        .#{$prefix}col-#{$breakpoint}-first {
+            order: -1;
+        }
+        
+        .#{$prefix}col-#{$breakpoint}-last {
+            order: 1;
+        }
+    }
+
+    /*------------------------------------*\
+    # ORDERING
+    \*------------------------------------*/
+
+    @if $hidding {
+        .#{$prefix}#{$breakpoint}-hide {
+            display: none;
+        }
+    }
+
+}
+
+
+
+
+/**
+* GENERATE  ALIGNMENT CLASSES 
+*
+* Description: This mixing is generating the alignment classes to elements.
+* These classes can align elements in the horizontal and vertical axis.
+*
+* Map example:
+*
+* $contentAlignments: (
+*       justify-content: (
+*           left: flex-start,
+*           center: center,
+*           right: flex-end
+*       ),
+*       align-items: (
+*           top: flex-start,
+*           middle: center,
+*           bottom: flex-end
+*       ),
+*   );
+*
+*
+* Output example:
+*
+* .sm-right {
+*   justify-content: flex-end;
+* }
+*
+* ...
+*/
+
+@mixin alignmentGenerator($breakpoint, $content) {
+    @each $property, $values in $content {
+        @each $id, $value in $values {
+            .#{$prefix}#{$breakpoint}-#{$id} {
+                #{$property}: #{$value};
+            }
+        }
+    }
+}
+
+
+
+
+/**
+* BREAKPOINT MIXINGS
+*
+* Description: Creating our breakpoint mixings.
+*/
+
+    /**
+    * SMALL (SM)
+    */
+
+    @mixin sm {
+        @media (min-width: #{$screen-sm-min}) {
+            @content;
+        }
+    }
+
+    /**
+    * MEDIUM (MD)
+    */
+
+    @mixin md {
+        @media (min-width: #{$screen-md-min}) {
+            @content;
+        }
+    }
+
+    /**
+    * LARGE (LG)
+    */
+    
+    @mixin lg {
+        @media (min-width: #{$screen-lg-min}) {
+            @content;
+        }
+    }

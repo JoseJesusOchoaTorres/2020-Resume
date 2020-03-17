@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    # TEXT  
+\*------------------------------------*/
+
+    /*------------------------------------*\
+    ## TEXT WEIGHTS 
+    \*------------------------------------*/
+
+    .#{$prefix}bolder {
+        font-weight: bolder;
+    }
+
+    .#{$prefix}bold {
+        font-weight: bold;
+    }
+
+    .#{$prefix}regular {
+        font-weight: normal;
+    }
+
+    .#{$prefix}light {
+        font-weight: lighter;
+    }
+
+    .#{$prefix}thin {
+        font-weight: 100;
+    }
+
+
+    /*------------------------------------*\
+    ## TEXT TRANSFORM
+    \*------------------------------------*/
+
+    .#{$prefix}text-uppercase {
+        text-transform: uppercase;
+    }
