@@ -5,6 +5,7 @@
 @import 'modules/variables.scss';
 @import 'modules/mynormalize.scss';
 
+/* HELPER AND GRID CLASSES */
 @import 'modules/mixings';
 @import 'modules/colors';
 @import 'modules/headings';
@@ -15,4 +16,5 @@
 @import 'modules/alignment';
 @import 'modules/utilities';
 
-
+/* ELEMENTS */
+@import 'modules/elements/header'

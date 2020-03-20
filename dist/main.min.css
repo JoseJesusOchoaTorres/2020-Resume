@@ -397,6 +397,7 @@ body *::after, body *::before {
   box-sizing: border-box;
 }
 
+/* HELPER AND GRID CLASSES */
 /**
 * GENERATE REPETITIVE CLASSES
 *
@@ -1723,6 +1724,30 @@ body *::after, body *::before {
 .pp-downsize {
   max-width: 100%;
   height: auto;
+}
+
+/* ELEMENTS */
+.header__container {
+  background-image: linear-gradient(-90deg, white, #F1F1F1);
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 110vh;
+  width: 100vw;
+}
+.header__title {
+  background: url("water.jpg") center/cover #222;
+  background-attachment: fixed;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  word-break: break-word;
+  font-size: 30vmin;
+  font-weight: 900;
+  padding: 1rem;
+  width: 100%;
+  margin: 0;
+}
+.header__span {
+  word-break: break-all;
 }
 
 /*# sourceMappingURL=main.min.css.map */
