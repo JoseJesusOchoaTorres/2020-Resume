@@ -1,0 +1,40 @@
+.nav {
+    &__container {
+        border: 1px solid var(--gray-color-1, rgb(226, 226, 226));
+        position: -webkit-sticky;
+        position: sticky;
+        display: flex;
+        top: 0;
+    }
+
+    &__li {
+        border-right: 1px solid var(--gray-color-1, rgb(226, 226, 226));
+        list-style: none;
+
+        &:first-child {
+            border-left: 1px solid var(--gray-color-1, rgb(226, 226, 226));
+        }
+
+        & a {
+            color: var(--black-color-3, rgb(107, 107, 107));
+            padding: 1.5rem 2.5rem;
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
+
+.image {
+    &__container {
+        width: 200px;
+    }
+
+    &__profile {
+        border: 5px solid var(--white-color-1, rgb(255, 255, 255));
+        box-shadow: 0 1px 5px rgba(39, 39, 39, 0.411);
+        border-radius: 50%;
+        position: absolute;
+        height: 150px;
+        width: auto;
+    }
+}

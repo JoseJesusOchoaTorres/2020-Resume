@@ -1,6 +1,6 @@
 .header {
     &__container {
-        background-image: linear-gradient(-90deg, white, #F1F1F1);
+        background-image: linear-gradient(-90deg, white, $gray-light-2);
         justify-content: flex-start;
         align-items: center;
         min-height: 110vh;
@@ -8,7 +8,7 @@
     }
 
     &__title {
-        background: url('water.jpg') center / cover #222;
+        background: url('water.jpg') center / cover $gray-dark-2;
         background-attachment: fixed;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;

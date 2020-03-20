@@ -17,4 +17,9 @@
 @import 'modules/utilities';
 
 /* ELEMENTS */
-@import 'modules/elements/header'
+@import 'modules/elements/header';
+@import 'modules/elements/navigation';
+@import 'modules/elements/about-me';
+
+/* TEMPORAL BEFORE REFACTOR */
+@import 'modules/temporal';
