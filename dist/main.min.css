@@ -1729,10 +1729,10 @@ body *::after, body *::before {
 /* ELEMENTS */
 .header__container {
   background-image: linear-gradient(-90deg, white, #EFEFEF);
-  justify-content: flex-start;
   align-items: center;
   min-height: 110vh;
   width: 100vw;
+  line-height: 1;
 }
 .header__title {
   background: url("water.jpg") center/cover #333333;
@@ -2141,10 +2141,18 @@ body *::after, body *::before {
   }
 }
 @media (max-width: 778px) {
+  .header__container {
+    min-height: 100vh;
+  }
+
+  .header__title {
+    font-size: 32vmin;
+  }
+
   /*********************************/
   /*** NAVIGATION
   /*********************************/
-  .nav__container .image__container {
+  .nav__container, .image__container {
     display: none;
   }
 
